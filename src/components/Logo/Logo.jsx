@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+// import { useContext } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 // import { MenuContext } from '../../MenuContext';
 import './Logo.scss';

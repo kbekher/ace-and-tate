@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { Intro } from "./components/Intro/";
 
 import "./App.scss";
 
@@ -17,16 +18,16 @@ export const App = () => {
           {/* {isBasketOpen && (
             <Basket />
           )} */}
-{/* 
+
           <main>
             <Intro />
-            <Products />
+            {/* <Products />
             <About />
             <Customers />
-            <Stores />
+            <Stores /> */}
           </main>
 
-          <Footer /> */}
+          {/* <Footer /> */}
         </div>
       </div>
     </div>

@@ -1,15 +1,17 @@
 @import url('./styles/_utils.scss');
 
 body {
+  margin: 0;
+  background-color: #ffffff;
+  color: #000000;
   font-family: "Inter", sans-serif;
   font-weight: 500;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 1136px;
+  max-width: 1200px;
   padding: 0 20px;
-  height: auto;
 }
 
 h1,

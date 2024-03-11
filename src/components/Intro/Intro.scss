@@ -1,0 +1,56 @@
+@import '../../styles/utils';
+
+.Intro {
+  &__content {
+    width: auto;
+    height: 90vh;
+    border-radius: 70px;
+    background-image: url('../../../public/assets/design/header-desktop.webp');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column-reverse;
+    box-sizing: border-box;
+    padding: 30px;
+  }
+
+  &__textBox {
+    width: 60%;
+    position: relative;
+
+    @include onMobile {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    display: inline;
+    color: #ffffff;
+    font-size: 90px;
+    line-height: 116px;
+
+    @include onTablet {
+      font-size: 60px;
+      line-height: 74px;
+    }
+  }
+
+  &__innerImg {
+    position: absolute;
+    transform: translateY(6px);
+    margin-left: 10px;
+    max-width: 254px;
+    max-height: auto;
+    width: auto;
+    height: auto;
+
+    @include onTablet {
+      max-width: 170px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+}
