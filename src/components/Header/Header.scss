@@ -1,0 +1,75 @@
+@import '../../styles/utils';
+
+.Header {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__content {
+    margin: 0 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__navList {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+    line-height: 14px;
+
+    & li:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+
+  &__navItem {
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+    position: relative;
+
+    transition: $transition;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: #333;
+      transition: $transition;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+
+    &:hover {
+      color: #000000;
+    }
+  }
+
+  &__actionList {
+    display: flex;
+    align-items: center;
+  }
+
+  &__actionItem {
+    & button {
+      display: block;
+      transition: $transition;
+      cursor: pointer;
+
+      &:hover {
+        transform: $icons-hover;
+      }
+    }
+
+    & img {
+      @include square(18px);
+    }
+  }
+}

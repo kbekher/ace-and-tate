@@ -1,0 +1,17 @@
+@import '../../styles/utils';
+
+.Logo {
+  display: block;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    transform: $icons-hover;
+  }
+
+  &__image {
+    display: block;
+    width: 100px;
+    height: 18px;
+  }
+}

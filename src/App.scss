@@ -1,5 +1,6 @@
+@import url('./styles/_utils.scss');
+
 body {
-  margin: 0;
   font-family: "Inter", sans-serif;
   font-weight: 500;
 }
@@ -14,20 +15,4 @@ body {
 h1,
 h2 {
   font-weight: 900;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
-p,
-ul,
-li {
-  margin: 0;
-  padding: 0;
 }

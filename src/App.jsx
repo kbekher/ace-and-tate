@@ -1,3 +1,5 @@
+import { Header } from "./components/Header";
+
 import "./App.scss";
 
 export const App = () => {
@@ -6,7 +8,25 @@ export const App = () => {
     <div className="App">
       <div className="container">
         <div className="App__content">
-          <h1>Ace & Tate</h1>
+          <Header />
+
+          {/* {isMenuOpen && (
+            <Menu />
+          )} */}
+
+          {/* {isBasketOpen && (
+            <Basket />
+          )} */}
+{/* 
+          <main>
+            <Intro />
+            <Products />
+            <About />
+            <Customers />
+            <Stores />
+          </main>
+
+          <Footer /> */}
         </div>
       </div>
     </div>
