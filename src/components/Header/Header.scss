@@ -11,45 +11,56 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
 
-  &__navList {
-    display: flex;
-    justify-content: space-between;
+    &>div:not(:nth-child(3)) {
+      width: 20%;
+    }
 
-    font-size: 12px;
-    line-height: 14px;
-
-    & li:not(:last-child) {
-      margin-right: 40px;
+    @include onMobile {
+      margin: 0;
     }
   }
 
-  &__navItem {
-    padding-bottom: 8px;
-    border-bottom: 1px solid transparent;
-    position: relative;
+  &__logo {
+    @include onTablet {
+      flex-grow: 1;
 
-    transition: $transition;
+      &>button {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
 
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background-color: #333;
+
+  &__hamburger {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    & img {
+      width: 24px;
+      height: 16px;
+
       transition: $transition;
-    }
 
-    &:hover::before {
-      width: 100%;
+      &:hover {
+        transform: scale(0.9);
+      }
     }
+  }
 
-    &:hover {
-      color: #000000;
+  &__nav {
+    @include onTablet {
+      display: none;
     }
+  }
+  
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__actionList {
@@ -58,6 +69,10 @@
   }
 
   &__actionItem {
+    &:not(:last-child) {
+      padding-right: 4px;
+    }
+
     & button {
       display: block;
       transition: $transition;

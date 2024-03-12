@@ -1,43 +1,42 @@
 import React from 'react';
 
-import './Header.scss';
 import { Logo } from '../Logo';
+import { Nav } from '../Nav';
+
+import './Header.scss';
 
 export const Header = () => {
+  const actionIcons = ['loupe', 'heart', 'bag'];
+
+  // const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext);
+
+  // const handleClick = () => setIsMenuOpen(!isMenuOpen);
+
   return (
     <header className="Header">
       <div className="Header__content">
+
+        <div className="Header__hamburger">
+          <img src="./assets/icons/menu.svg" alt="hamburger menu" className="Header__hamburger-icon" />
+        </div>
+
         <div className="Header__logo">
           <Logo />
         </div>
 
-        <nav className="Header__nav">
-          <ul className="Header__navList">
-            <li><a href="#glasses" className="Header__navItem">Glasses</a></li>
-            <li><a href="#sunglasses" className="Header__navItem">Sunglasses</a></li>
-            <li><a href="#sport" className="Header__navItem">Sport</a></li>
-            <li><a href="#lenses" className="Header__navItem">Lenses</a></li>
-            <li><a href="#accessories" className="Header__navItem" >Accessories</a></li>
-          </ul>
-        </nav>
+        <div className="Header__nav">
+          <Nav />
+        </div>
 
         <div className="Header__actions">
           <ul className='Header__actionList'>
-            <li className='Header__actionItem'>
-              <button type="button">
-                <img src="./assets/icons/loupe.svg" alt="search icon" />
-              </button>
-            </li>
-            <li className='Header__actionItem'>
-              <button type="button">
-                <img src="./assets/icons/heart.svg" alt="favourites icon" />
-              </button>
-            </li>
-            <li className='Header__actionItem'>
-              <button type="button">
-                <img src="./assets/icons/bag.svg" alt="bag icon" />
-              </button>
-            </li>
+            {actionIcons.map(icon => (
+              <li className='Header__actionItem' key={icon}>
+                <button type="button">
+                  <img src={`./assets/icons/${icon}.svg`} alt={`${icon} icon`} />
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
 

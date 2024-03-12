@@ -1,0 +1,43 @@
+@import '../../styles/utils';
+
+.Nav {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+    line-height: 14px;
+
+    & li:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+
+  &__item {
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+    position: relative;
+
+    text-transform: capitalize;
+    transition: $transition;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: #333;
+      transition: $transition;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+
+    &:hover {
+      color: #000000;
+    }
+  }
+}
