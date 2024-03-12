@@ -1,5 +1,6 @@
 import { Header } from "./components/Header";
-import { Intro } from "./components/Intro/";
+import { Intro } from "./components/Intro";
+import { Goods } from "./components/Goods";
 
 import "./App.scss";
 
@@ -21,8 +22,8 @@ export const App = () => {
 
           <main>
             <Intro />
-            {/* <Products />
-            <About />
+            <Goods />
+            {/* <About />
             <Customers />
             <Stores /> */}
           </main>

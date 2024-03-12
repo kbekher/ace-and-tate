@@ -10,13 +10,19 @@
   }
 }
 
-// @mixin onLargeScreen {
-//   @media (min-width: 1920px) {
-//     @content;
-//   }
-// }
-
 @mixin square ($size) {
   width: $size;
   height: $size ;
+}
+
+
+@mixin grid {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(12, 1fr);
+
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
