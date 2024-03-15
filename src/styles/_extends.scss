@@ -1,5 +1,18 @@
-// %btn-primary {
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   background-size: contain;
-// }
+%button-primary {
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 23px;
+  
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+
+  transition: $transition;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #131313;
+    color: white;
+  }
+}

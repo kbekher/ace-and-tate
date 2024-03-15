@@ -1,6 +1,7 @@
 import { Header } from "./components/Header";
 import { Intro } from "./components/Intro";
 import { Goods } from "./components/Goods";
+import { About } from "./components/About/";
 
 import "./App.scss";
 
@@ -23,8 +24,8 @@ export const App = () => {
           <main>
             <Intro />
             <Goods />
-            {/* <About />
-            <Customers />
+            <About />
+            {/* <Customers />
             <Stores /> */}
           </main>
 

@@ -14,11 +14,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 
-     & h2 {
+    & h2 {
       font-size: 74px;
-      font-weight: 900;
-     }
+
+      @include onMobile {
+        font-size: 44px;
+      }
+    }
+
+    & button {
+      @extend %button-primary;
+    }
   }
 
   &__wrapper {
@@ -29,28 +37,18 @@
     overflow: hidden;
     grid-column: span 3;
 
-    &:nth-child(n + 5) {
-      margin-top: 20px;
-    }
-
     @include onTablet {
       grid-column: span 2;
-
-      &:nth-child(n + 4) {
-        margin-top: 20px;
-      }
     }
 
     @include onMobile {
-      grid-column: span 3;
-
-      &:nth-child(n + 2) {
-        margin-top: 20px;
-      }
+      grid-column: span 1;
     }
   }
 
   &__img-container {
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,12 +58,40 @@
     border-radius: 70px;
     background-color: #f1f1f1;
 
-    & img {
-      display: block;
-      max-width: 80%;
-      height: auto;
+    @include onMobile {
+      height: 200px;
+      border-radius: 40px;
     }
   }
+
+  &__fav-icon {
+    position: absolute;
+    top: 8%;
+    right: 10%;
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 50%;
+
+    background-image: url('../../../public/assets/icons/heart.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: $transition;
+
+    &:hover {
+      cursor: pointer;
+      background-image: url('../../../public/assets/icons/heart-black.svg');
+    }
+  }
+
+  &__good-img {
+    display: block;
+    max-width: 80%;
+    height: auto;
+  }
+
+
 
   &__info {
     display: flex;
@@ -84,5 +110,7 @@
 
   &__cart-btn {
     margin-top: 10px;
+
+    @extend %button-primary;
   }
 }
