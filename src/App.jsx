@@ -3,7 +3,7 @@ import { Intro } from "./components/Intro";
 import { Goods } from "./components/Goods";
 import { About } from "./components/About/";
 import { Customers } from "./components/Customers/";
-
+import { Stores } from "./components/Stores/";
 
 import "./App.scss";
 
@@ -28,7 +28,7 @@ export const App = () => {
             <Goods />
             <About />
             <Customers />
-            {/* <Stores /> */}
+            <Stores />
           </main>
 
           {/* <Footer /> */}

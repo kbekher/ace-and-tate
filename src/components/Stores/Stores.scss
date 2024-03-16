@@ -3,14 +3,46 @@
 .Stores {
   &__content {
     @include grid;
+
+    @include onMobile {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 
   &__img {
     grid-column: 1 / 7;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onMobile {
+    }
+
+    & img {
+      border-radius: $border-radius-elements;
+      max-height: 510px;
+      width: 100%;
+      object-fit: cover;
+
+      @include onMobile {
+        max-height: 366px;
+      }
+    }
   }
 
   &__text {
+    padding: 20px;
     grid-column: 8 / -1;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include onMobile {
+      text-align: center;
+    }
 
     & h3 {
       font-size: 74px;
@@ -21,7 +53,6 @@
 
       @include onMobile {
         font-size: 48px;
-        margin-bottom: 20px;
       }
     }
 
@@ -30,14 +61,21 @@
       font-size: 20px;
       line-height: 24px;
 
+      margin: 40px 0;
+
       @include onTablet {
         font-size: 18px;
         line-height: 20px;
+      }
+
+      @include onMobile {
+        margin: 20px 0;
       }
     }
 
     & button {
       @extend %button-primary;
+      padding: 10px 40px;
     }
   }
 }
