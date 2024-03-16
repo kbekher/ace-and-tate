@@ -8,6 +8,10 @@
     @include onTablet {
       padding: 0 20px;
     }
+
+    @include onMobile {
+      padding: 0;
+    }
   }
 
   &__top {

@@ -1,0 +1,111 @@
+@import '../../styles/utils';
+
+.Customers {
+  // position: relative;
+
+  // @include onMobile {
+  //   position: static;
+  // }
+  
+  &__content {
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include onMobile {
+      flex-direction: column;
+      height: max-content;
+    }
+  }
+
+  &__text {
+    min-width: 50%;
+    padding-bottom: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onMobile {
+      text-align: center;
+    }
+
+    & h3 {
+      font-size: 74px;
+
+      @include onTablet {
+        font-size: 54px;
+      }
+
+      @include onMobile {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+    }
+
+    & p {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+
+      @include onTablet {
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__slider {
+    min-width: 50%;
+  }
+}
+
+.swiper {
+  position: absolute;
+
+  @include onMobile{
+    position: static;
+  }
+
+
+  &-wrapper {
+    display: flex;
+    column-gap: 20px;
+  }
+
+  &-slide {
+    max-width: 260px;
+    height: auto;
+  }
+
+  &-image {
+    width: 100%;
+  }
+
+  &-button-prev,
+  &-button-next {
+    @extend %background-img;
+
+    display: inline-block;
+    @include square(50px);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &-button-prev {
+    background-image: url("../../../public/assets/icons/arrow-left.svg") !important;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-button-next {
+    background-image: url("../../../public/assets/icons/arrow-right.svg") !important;
+  }
+}
