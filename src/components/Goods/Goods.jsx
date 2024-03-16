@@ -21,9 +21,8 @@ export const Goods = () => {
             return (
               <div className='Goods__card' key={id}>
                 <div className='Goods__img-container'>
-                  <a className='Goods__fav-icon'>
-                    {/* <img src='./assets/icons/heart.svg' alt=""/> */}
-                  </a>
+                  <button className='Goods__fav-icon'>
+                  </button>
 
                   <img src={`./assets/goods/glass${id}.webp`} alt="glasses img"  className='Goods__good-img'/>
                 </div>

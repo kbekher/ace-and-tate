@@ -1,5 +1,43 @@
 @import '../../styles/utils';
 
 .Stores {
-  
+  &__content {
+    @include grid;
+  }
+
+  &__img {
+    grid-column: 1 / 7;
+  }
+
+  &__text {
+    grid-column: 8 / -1;
+
+    & h3 {
+      font-size: 74px;
+
+      @include onTablet {
+        font-size: 54px;
+      }
+
+      @include onMobile {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+    }
+
+    & p {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+
+      @include onTablet {
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+
+    & button {
+      @extend %button-primary;
+    }
+  }
 }
