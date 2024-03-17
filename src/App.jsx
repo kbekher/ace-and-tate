@@ -4,6 +4,7 @@ import { Goods } from "./components/Goods";
 import { About } from "./components/About/";
 import { Customers } from "./components/Customers/";
 import { Stores } from "./components/Stores/";
+import { Footer } from "./components/Footer/";
 
 import "./App.scss";
 
@@ -31,7 +32,7 @@ export const App = () => {
             <Stores />
           </main>
 
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </div>
     </div>

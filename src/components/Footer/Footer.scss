@@ -1,0 +1,60 @@
+@import '../../styles/utils';
+
+.Footer {
+  margin-top: 50px;
+
+  &__info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    flex-wrap: wrap;
+
+    @include onMobile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__info-box {
+    font-size: 20px;
+    font-weight: 400;
+
+    h4 {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    input {
+      margin: 10px 0 20px;
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 10px 40px 10px 20px;
+      border: 1px solid #000000;
+      border-radius: $border-radius-elements;
+
+      transition: $transition;
+
+      &:hover {
+        border-color: #7e7e7e;
+      }
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    & img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
