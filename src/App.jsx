@@ -1,3 +1,8 @@
+import { useContext, useEffect } from "react";
+
+import { MenuContext } from "./MenuContext";
+import { Menu } from "./components/Menu/";
+
 import { Header } from "./components/Header";
 import { Intro } from "./components/Intro";
 import { Goods } from "./components/Goods";
@@ -9,6 +14,30 @@ import { Footer } from "./components/Footer/";
 import "./App.scss";
 
 export const App = () => {
+  const { isMenuOpen } = useContext(MenuContext);
+
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual';
+  }, []);
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
+
+  useEffect(() => {
+    isMenuOpen
+      ? document.body.classList.add('body--with-menu')
+      : document.body.classList.remove('body--with-menu');
+  }, [isMenuOpen]);
+
 
   return (
     <div className="App">
@@ -16,9 +45,9 @@ export const App = () => {
         <div className="App__content">
           <Header />
 
-          {/* {isMenuOpen && (
+          {isMenuOpen && (
             <Menu />
-          )} */}
+          )}
 
           {/* {isBasketOpen && (
             <Basket />

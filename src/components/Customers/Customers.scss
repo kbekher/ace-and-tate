@@ -1,14 +1,7 @@
 @import '../../styles/utils';
 
 .Customers {
-  // position: relative;
-
-  // @include onMobile {
-  //   position: static;
-  // }
-  
   &__content {
-    height: 500px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -20,7 +13,6 @@
   }
 
   &__text {
-    min-width: 50%;
     padding-bottom: 50px;
 
     display: flex;
@@ -62,12 +54,11 @@
 }
 
 .swiper {
-  position: absolute;
+  // display: none;
 
-  @include onMobile{
-    position: static;
-  }
-
+  // @include onMobile {
+  //   display: block;
+  // }
 
   &-wrapper {
     display: flex;
