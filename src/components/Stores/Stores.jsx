@@ -7,7 +7,7 @@ export const Stores = () => {
     <div className='Stores'>
       <div className="Stores__content">
         <div className="Stores__img">
-          <img src="./assets/design/store.webp" alt="store" />
+          <img src="./assets/design/store.jpg" alt="store" />
         </div>
 
         <div className="Stores__text">

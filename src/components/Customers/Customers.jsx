@@ -16,13 +16,13 @@ export const Customers = () => {
 
         <div className="Customers__people">
           <div className="Customers__img-container">
-            <img src="./assets/design/people1.webp" alt="customer" />
+            <img src="./assets/design/people1.jpg" alt="customer" />
           </div>
           <div className="Customers__img-container">
-            <img src="./assets/design/people2.webp" alt="customer" />
+            <img src="./assets/design/people2.jpg" alt="customer" />
           </div>
           <div className="Customers__img-container">
-            <img src="./assets/design/people3.webp" alt="customer" />
+            <img src="./assets/design/people3.jpg" alt="customer" />
           </div>
         </div>
       </div>
