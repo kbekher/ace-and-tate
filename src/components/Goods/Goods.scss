@@ -38,6 +38,10 @@
   }
 
   &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     overflow: hidden;
     grid-column: span 3;
 
@@ -106,6 +110,7 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 16px;
+    text-align: center;
   }
 
   &__color {

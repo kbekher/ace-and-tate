@@ -13,14 +13,14 @@
 @mixin grid {
   display: grid;
   column-gap: 20px;
-  row-gap: 20px;
+  row-gap: 40px;
   grid-template-columns: repeat(12, 1fr);
 
 
   @include onTablet {
     grid-template-columns: repeat(6, 1fr);
     column-gap: 14px;
-    row-gap: 14px;
+    row-gap: 24px;
   }
 
   @include onMobile() {
