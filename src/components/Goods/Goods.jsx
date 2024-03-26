@@ -24,7 +24,7 @@ export const Goods = () => {
                   <button className='Goods__fav-icon'>
                   </button>
 
-                  <img src={`./assets/goods/glass${id}.webp`} alt="glasses img"  className='Goods__good-img'/>
+                  <img src={`./assets/goods/glass${id}.jpg`} alt="glasses img"  className='Goods__good-img'/>
                 </div>
 
                 <div className="Goods__info">
