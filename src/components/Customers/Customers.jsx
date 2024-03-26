@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { CustomSwiper } from './CustomSwiper';
 
 import './Customers.scss';
 
@@ -15,8 +14,16 @@ export const Customers = () => {
           <p>Jay, Kai, Lee, Liam, Lily, Madeleine, Max, Monty, Morris, Neil, Nelson, Nina, Pierce, Ray, Roth, Saul, Tyler, Wilson﻿</p>
         </div>
 
-        <div className="Customers__slider">
-          <CustomSwiper />
+        <div className="Customers__people">
+          <div className="Customers__img-container">
+            <img src="./assets/design/people1.webp" alt="customer" />
+          </div>
+          <div className="Customers__img-container">
+            <img src="./assets/design/people2.webp" alt="customer" />
+          </div>
+          <div className="Customers__img-container">
+            <img src="./assets/design/people3.webp" alt="customer" />
+          </div>
         </div>
       </div>
     </div>

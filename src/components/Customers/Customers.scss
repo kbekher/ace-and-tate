@@ -2,17 +2,24 @@
 
 .Customers {
   &__content {
+    height: 480px;
     display: flex;
     flex-direction: row;
+    column-gap: 20px;
     justify-content: space-between;
+
+    @include onTablet {
+      height: 360px;
+    }
 
     @include onMobile {
       flex-direction: column;
-      height: max-content;
+      height: auto;
     }
   }
 
   &__text {
+    width: 50%;
     padding-bottom: 50px;
 
     display: flex;
@@ -20,6 +27,7 @@
     justify-content: space-between;
 
     @include onMobile {
+      width: 100%;
       text-align: center;
     }
 
@@ -48,55 +56,25 @@
     }
   }
 
-  &__slider {
-    min-width: 50%;
-  }
-}
-
-.swiper {
-  // display: none;
-
-  // @include onMobile {
-  //   display: block;
-  // }
-
-  &-wrapper {
+  &__people {
     display: flex;
-    column-gap: 20px;
-  }
-
-  &-slide {
-    max-width: 260px;
-    height: auto;
-  }
-
-  &-image {
-    width: 100%;
-  }
-
-  &-button-prev,
-  &-button-next {
-    @extend %background-img;
-
-    display: inline-block;
-    @include square(50px);
-
-    &:hover {
-      cursor: pointer;
-    }
+    gap: 20px;
 
     @include onMobile {
-      display: none;
+      margin: 0 auto;
     }
   }
 
-  &-button-prev {
-    background-image: url("../../../public/assets/icons/arrow-left.svg") !important;
-    margin-left: 50%;
-    transform: translateX(-50%);
+  &__img-container {
+    max-width: 180px;
+    max-height: 450px;
+
+    & img {
+      border-radius: 70px;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  &-button-next {
-    background-image: url("../../../public/assets/icons/arrow-right.svg") !important;
-  }
 }
