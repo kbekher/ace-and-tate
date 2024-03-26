@@ -6,7 +6,7 @@
   &__content {
     width: 100%;
     height: 90vh;
-    border-radius: 70px;
+    border-radius: $border-radius-elements;
     background-image: url('../../../public/assets/design/header-desktop.webp');
     background-size: cover;
     background-position: center;
@@ -47,6 +47,7 @@
     max-height: auto;
     width: auto;
     height: auto;
+    border-radius: $border-radius-elements;
 
     transition: $transition;
 
