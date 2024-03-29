@@ -91,6 +91,10 @@
       cursor: pointer;
       background-image: url('../../../public/assets/icons/heart-black.svg');
     }
+
+    &--in-favs {
+      background-image: url('../../../public/assets/icons/heart-black.svg');
+    }
   }
 
   &__good-img {
@@ -98,8 +102,6 @@
     max-width: 80%;
     height: auto;
   }
-
-
 
   &__info {
     display: flex;
@@ -118,8 +120,18 @@
   }
 
   &__cart-btn {
+    background-color: #000000;
+    color: #ffffff;
     margin-top: 10px;
+    width: 150px;
 
     @extend %button-primary;
+
+    &--in-cart {
+      color: $color-secondary;
+
+      background-color: #ffffff;
+      border-color: #e1e1e1;
+    }
   }
 }

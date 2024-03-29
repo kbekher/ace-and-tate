@@ -5,6 +5,7 @@ import { Nav } from '../Nav';
 import { MenuContext } from '../../MenuContext';
 
 import './Header.scss';
+import { CartContext, FavouritesContext } from '../../SavedProductsContext';
 
 export const Header = () => {
   const actionIcons = ['loupe', 'heart', 'bag'];
@@ -12,6 +13,13 @@ export const Header = () => {
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext);
 
   const handleClick = () => setIsMenuOpen(!isMenuOpen);
+
+  const { cartItems } = useContext(CartContext);
+  const { favourites } = useContext(FavouritesContext);
+
+  const getAmount = (iconType) => {
+    return iconType === 'bag' ? cartItems.length : favourites.length;
+  };
 
   return (
     <header className="Header">
@@ -38,7 +46,13 @@ export const Header = () => {
             {actionIcons.map(icon => (
               <li className='Header__actionItem' key={icon}>
                 <button type="button">
-                  <img src={`./assets/icons/${icon}.svg`} alt={`${icon} icon`} />
+                  <img src={`./assets/icons/${icon}.svg`} alt={`${icon} icon`}/>
+
+                  {icon !== 'loupe' && getAmount(icon) !== 0 && (
+                    <div key={getAmount(icon)}>
+                      {getAmount(icon)}
+                    </div>
+                  )}
                 </button>
               </li>
             ))}
