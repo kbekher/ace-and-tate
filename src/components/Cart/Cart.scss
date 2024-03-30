@@ -1,0 +1,144 @@
+@import '../../styles/utils';
+
+.Cart {
+  position: fixed;
+  background-color: #ffffff;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  opacity: 1;
+  transition: $transition;
+  overflow-y: auto; /* Enable vertical scrolling */
+
+  &__content {
+    margin: 0 60px;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 20px;
+
+
+    @include onMobile {
+      margin: 0;
+      padding: 20px 0;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__close {
+    width: 20px;
+
+    transition: $transition;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.9);
+    }
+
+    & img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    width: max-content;
+    margin: 0 auto;
+    font-size: 74px;
+    font-weight: 900;
+
+    @include onMobile {
+      font-size: 70px;
+    }
+
+    &--error {
+      width: max-content;
+      margin: 0 auto;
+      color: #5c5a5a;
+      font-weight: 500;
+      font-size: 34px;
+    }
+  }
+
+  &__products-container {
+    margin-top: 40px;
+  }
+
+  &__products {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    @include onMobile {
+      margin: 0 auto;
+      width: max-content;
+      flex-direction: column;
+    }
+  }
+
+  &__product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    &-img-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+
+      @include square(300px);
+      border-radius: 70px;
+      background-color: #f1f1f1;
+
+      @include onMobile {
+        @include square(165px);
+        border-radius: 40px;
+      }
+    }
+
+    &-img {
+      display: block;
+      max-width: 80%;
+      height: auto;
+    }
+
+    &-info {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16px;
+      text-align: center;
+
+      @include onMobile {
+        width: 165px;
+      }
+    }
+
+    &-color {
+      color: #565555;
+    }
+  }
+
+}
+
+.hidden {
+  opacity: 0;
+}

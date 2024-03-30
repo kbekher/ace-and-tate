@@ -19,3 +19,23 @@ export const MenuProvider = ({ children }) => {
     </MenuContext.Provider>
   )
 }
+
+export const BasketContext = React.createContext({
+  isCartOpen: false,
+  setIsCartOpen: () => { },
+});
+
+export const BasketProvider = ({ children }) => {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const value = useMemo(() => ({
+    isCartOpen,
+    setIsCartOpen
+  }), [isCartOpen]);
+  
+  return (
+    <BasketContext.Provider value={value}>
+      {children}
+    </BasketContext.Provider>
+  )
+}

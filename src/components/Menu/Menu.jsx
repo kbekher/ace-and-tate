@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import cn from 'classnames';
 
-import { MenuContext } from '../../MenuContext';
+import { MenuContext } from '../../LayerContext';
 import { Nav } from '../Nav';
 
 import './Menu.scss';

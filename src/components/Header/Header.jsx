@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { Logo } from '../Logo';
 import { Nav } from '../Nav';
-import { MenuContext } from '../../MenuContext';
+import { BasketContext, MenuContext } from '../../LayerContext';
 
 import './Header.scss';
 import { CartContext, FavouritesContext } from '../../SavedProductsContext';
@@ -12,7 +12,11 @@ export const Header = () => {
 
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext);
 
-  const handleClick = () => setIsMenuOpen(!isMenuOpen);
+  const handleMenuClick = () => setIsMenuOpen(!isMenuOpen);
+
+  const { isCartOpen, setIsCartOpen } = useContext(BasketContext);
+
+  const handleCartClick = () => setIsCartOpen(!isCartOpen);
 
   const { cartItems } = useContext(CartContext);
   const { favourites } = useContext(FavouritesContext);
@@ -25,7 +29,7 @@ export const Header = () => {
     <header className="Header">
       <div className="Header__content">
 
-        <div className="Header__hamburger" onClick={handleClick}>
+        <div className="Header__hamburger" onClick={handleMenuClick}>
           <img
             src="./assets/icons/menu.svg"
             alt="hamburger menu"
@@ -45,7 +49,7 @@ export const Header = () => {
           <ul className='Header__actionList'>
             {actionIcons.map(icon => (
               <li className='Header__actionItem' key={icon}>
-                <button type="button">
+                <button type="button" onClick={icon === 'bag' ? handleCartClick : () => {}}>
                   <img src={`./assets/icons/${icon}.svg`} alt={`${icon} icon`}/>
 
                   {icon !== 'loupe' && getAmount(icon) !== 0 && (

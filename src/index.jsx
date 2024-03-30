@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { MenuProvider } from './MenuContext';
+import { BasketProvider, MenuProvider } from './LayerContext';
 import { SavedItemsProvoder } from './SavedProductsContext';
 import { App } from './App';
 
@@ -10,9 +10,11 @@ const root = createRoot(element);
 root.render(
   <StrictMode>
     <SavedItemsProvoder>
-      <MenuProvider>
-        <App />
-      </MenuProvider>
+      <BasketProvider>
+        <MenuProvider>
+          <App />
+        </MenuProvider>
+      </BasketProvider>
     </SavedItemsProvoder>
   </StrictMode>
 );

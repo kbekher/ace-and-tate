@@ -1,7 +1,8 @@
 import { useContext, useEffect } from "react";
 
-import { MenuContext } from "./MenuContext";
+import { BasketContext, MenuContext } from "./LayerContext";
 import { Menu } from "./components/Menu/";
+import { Cart } from "./components/Cart/Cart";
 
 import { Header } from "./components/Header";
 import { Intro } from "./components/Intro";
@@ -15,6 +16,7 @@ import "./App.scss";
 
 export const App = () => {
   const { isMenuOpen } = useContext(MenuContext);
+  const { isCartOpen } = useContext(BasketContext);
 
   useEffect(() => {
     window.history.scrollRestoration = 'manual';
@@ -33,10 +35,10 @@ export const App = () => {
   }, []);
 
   useEffect(() => {
-    isMenuOpen
+    isMenuOpen || isCartOpen
       ? document.body.classList.add('body--with-menu')
       : document.body.classList.remove('body--with-menu');
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isCartOpen]);
 
 
   return (
@@ -49,9 +51,9 @@ export const App = () => {
             <Menu />
           )}
 
-          {/* {isBasketOpen && (
-            <Basket />
-          )} */}
+          {isCartOpen && (
+            <Cart />
+          )}
 
           <main>
             <Intro />

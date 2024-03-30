@@ -125,6 +125,10 @@
     margin-top: 10px;
     width: 150px;
 
+    @include onMobile {
+      width: 100%;
+    }
+
     @extend %button-primary;
 
     &--in-cart {
