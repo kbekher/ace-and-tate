@@ -131,11 +131,18 @@
 
     @extend %button-primary;
 
+
     &--in-cart {
       color: $color-secondary;
 
       background-color: #ffffff;
       border-color: #e1e1e1;
+
+
+      &:hover {
+        background-color: white;
+        color: $color-secondary;
+      }
     }
   }
 }

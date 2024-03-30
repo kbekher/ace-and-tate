@@ -11,7 +11,8 @@
   z-index: 100;
   opacity: 1;
   transition: $transition;
-  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
 
   &__content {
     margin: 0 60px;
@@ -99,7 +100,8 @@
       align-items: center;
       margin-bottom: 10px;
 
-      @include square(300px);
+      width: 245px;
+      height: 300px;
       border-radius: 70px;
       background-color: #f1f1f1;
 

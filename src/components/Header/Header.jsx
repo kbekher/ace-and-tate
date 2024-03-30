@@ -8,7 +8,7 @@ import './Header.scss';
 import { CartContext, FavouritesContext } from '../../SavedProductsContext';
 
 export const Header = () => {
-  const actionIcons = ['loupe', 'heart', 'bag'];
+  const actionIcons = ['heart', 'bag'];
 
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext);
 
@@ -52,7 +52,7 @@ export const Header = () => {
                 <button type="button" onClick={icon === 'bag' ? handleCartClick : () => {}}>
                   <img src={`./assets/icons/${icon}.svg`} alt={`${icon} icon`}/>
 
-                  {icon !== 'loupe' && getAmount(icon) !== 0 && (
+                  {getAmount(icon) !== 0 && (
                     <div key={getAmount(icon)}>
                       {getAmount(icon)}
                     </div>

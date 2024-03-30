@@ -57,7 +57,7 @@
       display: none;
     }
   }
-  
+
   &__actions {
     display: flex;
     justify-content: flex-end;
@@ -69,12 +69,16 @@
   }
 
   &__actionItem {
-    &:first-child img{
+    &:first-child img {
       @include square(18px);
     }
 
     &:not(:last-child) {
       padding-right: 4px;
+
+      @include onMobile {
+        padding-right: 10px;
+      }
     }
 
     & button {
@@ -99,13 +103,13 @@
       line-height: 14px;
       text-align: center;
       font-weight: 600;
-      background-color:$color-secondary;
+      background-color: $color-secondary;
       color: #ffffff;
       position: absolute;
       bottom: 50%;
       left: 50%;
       border-radius: 50%;
-  
+
       animation: zoom-in-out 0.5s;
     }
   }
