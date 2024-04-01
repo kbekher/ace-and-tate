@@ -92,8 +92,24 @@
       background-image: url('../../../public/assets/icons/heart-black.svg');
     }
 
+    @include onTablet {
+
+      &:hover,
+      &:active {
+        background-image: url('../../../public/assets/icons/heart.svg');
+      }
+    }
+
     &--in-favs {
       background-image: url('../../../public/assets/icons/heart-black.svg');
+
+      @include onTablet {
+
+        &:hover,
+        &:active {
+          background-image: url('../../../public/assets/icons/heart-black.svg');
+        }
+      }
     }
   }
 
@@ -137,7 +153,6 @@
 
       background-color: #ffffff;
       border-color: #e1e1e1;
-
 
       &:hover {
         background-color: white;
