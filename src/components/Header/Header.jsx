@@ -1,4 +1,10 @@
 import React, { useContext } from 'react';
+import { Tilt } from 'react-tilt';
+import { motion } from 'framer-motion';
+
+import { fadeIn, textVariant } from '../../utils/motion';
+
+import { SectionWrapper } from '../../hoc';
 
 import { Logo } from '../Logo';
 import { Nav } from '../Nav';
@@ -7,7 +13,7 @@ import { BasketContext, MenuContext } from '../../LayerContext';
 import './Header.scss';
 import { CartContext, FavouritesContext } from '../../SavedProductsContext';
 
-export const Header = () => {
+const Header = () => {
   const actionIcons = ['heart', 'bag'];
 
   const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext);
@@ -26,45 +32,51 @@ export const Header = () => {
   };
 
   return (
-    <header className="Header">
-      <div className="Header__content">
+    <>
+      <motion.header
+        variants={textVariant()}
+        className="Header"
+      >
+        <div className="Header__content">
 
-        <div className="Header__hamburger" onClick={handleMenuClick}>
-          <img
-            src="./assets/icons/menu.svg"
-            alt="hamburger menu"
-            className="Header__hamburger-icon"
-          />
+          <div className="Header__hamburger" onClick={handleMenuClick}>
+            <img
+              src="./assets/icons/menu.svg"
+              alt="hamburger menu"
+              className="Header__hamburger-icon"
+            />
+          </div>
+
+          <div className="Header__logo">
+            <Logo />
+          </div>
+
+          <div className="Header__nav">
+            <Nav />
+          </div>
+
+          <div className="Header__actions">
+            <ul className='Header__actionList'>
+              {actionIcons.map(icon => (
+                <li className='Header__actionItem' key={icon}>
+                  <button type="button" onClick={icon === 'bag' ? handleCartClick : () => { }}>
+                    <img src={`./assets/icons/${icon}.svg`} alt={`${icon} icon`} />
+
+                    {getAmount(icon) !== 0 && (
+                      <div key={getAmount(icon)}>
+                        {getAmount(icon)}
+                      </div>
+                    )}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
-
-        <div className="Header__logo">
-          <Logo />
-        </div>
-
-        <div className="Header__nav">
-          <Nav />
-        </div>
-
-        <div className="Header__actions">
-          <ul className='Header__actionList'>
-            {actionIcons.map(icon => (
-              <li className='Header__actionItem' key={icon}>
-                <button type="button" onClick={icon === 'bag' ? handleCartClick : () => {}}>
-                  <img src={`./assets/icons/${icon}.svg`} alt={`${icon} icon`}/>
-
-                  {getAmount(icon) !== 0 && (
-                    <div key={getAmount(icon)}>
-                      {getAmount(icon)}
-                    </div>
-                  )}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-      </div>
-    </header>
+      </motion.header>
+    </>
   )
 }
 
+export default SectionWrapper(Header, "header");

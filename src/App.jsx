@@ -4,7 +4,8 @@ import { BasketContext, MenuContext } from "./LayerContext";
 import { Menu } from "./components/Menu/";
 import { Cart } from "./components/Cart/Cart";
 
-import { Header } from "./components/Header";
+import  Header  from './components/Header/Header';
+// import { Header } from "./components/Header/Header";
 import { Intro } from "./components/Intro";
 import { Goods } from "./components/Goods";
 import { About } from "./components/About/";
