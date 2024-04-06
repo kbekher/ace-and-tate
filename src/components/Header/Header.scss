@@ -61,6 +61,10 @@
   &__actions {
     display: flex;
     justify-content: flex-end;
+
+    @include onMobile {
+      margin-right: 4px;
+    }
   }
 
   &__actionList {

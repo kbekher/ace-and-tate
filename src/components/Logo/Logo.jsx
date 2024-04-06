@@ -32,7 +32,7 @@ export const Logo = () => {
     >
       <img
         className="Logo__image"
-        src="./assets/logo.svg"
+        src="./assets/logo.png"
         alt="logo"
       />
     </button>
