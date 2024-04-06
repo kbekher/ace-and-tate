@@ -40,7 +40,7 @@ export const Cart = () => {
 
           </div>
 
-          <h2 className='Cart__title'>My basket</h2>
+          <h2 className='Cart__title'>My cart</h2>
 
           <div className="Cart__products-container">
             {!cartItems.length ? (

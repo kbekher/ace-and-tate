@@ -5,8 +5,10 @@ import { Menu } from "./components/Menu/";
 import { Cart } from "./components/Cart/Cart";
 
 import  Header  from './components/Header/Header';
+import Intro from './components/Intro/Intro';
+
 // import { Header } from "./components/Header/Header";
-import { Intro } from "./components/Intro";
+// import { Intro } from "./components/Intro";  
 import { Goods } from "./components/Goods";
 import { About } from "./components/About/";
 import { Customers } from "./components/Customers/";

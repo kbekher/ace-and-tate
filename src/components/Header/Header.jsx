@@ -1,17 +1,16 @@
 import React, { useContext } from 'react';
-import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 
-import { fadeIn, textVariant } from '../../utils/motion';
+import { textVariant } from '../../utils/motion';
 
 import { SectionWrapper } from '../../hoc';
+import { CartContext, FavouritesContext } from '../../SavedProductsContext';
 
 import { Logo } from '../Logo';
 import { Nav } from '../Nav';
 import { BasketContext, MenuContext } from '../../LayerContext';
 
 import './Header.scss';
-import { CartContext, FavouritesContext } from '../../SavedProductsContext';
 
 const Header = () => {
   const actionIcons = ['heart', 'bag'];
@@ -32,9 +31,8 @@ const Header = () => {
   };
 
   return (
-    <>
       <motion.header
-        variants={textVariant()}
+        variants={textVariant(1.5)}
         className="Header"
       >
         <div className="Header__content">
@@ -75,8 +73,7 @@ const Header = () => {
 
         </div>
       </motion.header>
-    </>
-  )
+  );
 }
 
 export default SectionWrapper(Header, "header");
