@@ -6,11 +6,10 @@ import { Cart } from "./components/Cart/Cart";
 
 import  Header  from './components/Header/Header';
 import Intro from './components/Intro/Intro';
+import Goods from './components/Goods/Goods';
+import About from './components/About/About';
 
-// import { Header } from "./components/Header/Header";
-// import { Intro } from "./components/Intro";  
-import { Goods } from "./components/Goods";
-import { About } from "./components/About/";
+// import { About } from "./components/About/";
 import { Customers } from "./components/Customers/";
 import { Stores } from "./components/Stores/";
 import { Footer } from "./components/Footer/";

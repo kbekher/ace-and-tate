@@ -9,7 +9,7 @@ import './Intro.scss';
 const Intro = () => {
   return (
     <motion.div
-      variants={fadeIn("up", "linear", 1)}
+      variants={fadeIn("up", "linear", 0, 1)}
       className="Intro"
     >
       <div className="Intro__content">

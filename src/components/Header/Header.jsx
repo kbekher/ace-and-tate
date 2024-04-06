@@ -31,10 +31,7 @@ const Header = () => {
   };
 
   return (
-      <motion.header
-        variants={textVariant(1.5)}
-        className="Header"
-      >
+      <motion.header variants={textVariant(1.5)} className="Header">
         <div className="Header__content">
 
           <div className="Header__hamburger" onClick={handleMenuClick}>

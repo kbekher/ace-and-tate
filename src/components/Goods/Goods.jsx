@@ -1,24 +1,89 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { motion } from 'framer-motion';
+import cn from 'classnames';
 
-import { GoodCard } from './GoodCard';
+import { fadeIn, textVariant } from '../../utils/motion';
 
+import { SectionWrapper } from '../../hoc';
+import { CartContext, FavouritesContext } from '../../SavedProductsContext';
 import './Goods.scss';
 
 import { products } from './products';
 
-export const Goods = () => {
+const GoodCard = ({ product }) => {
+  const { id, name, color, price } = product;
+
+  const { cartItems, changeCartItems } = useContext(CartContext);
+  const isInCart = cartItems.length > 0
+    ? cartItems.find((item) => item.id === id) : false;
+
+  const { favourites, changeFavItems } = useContext(FavouritesContext);
+  const isInFavs = favourites.length > 0
+    ? favourites.find(item => item.id === id) : false;
+
+  const handleCartClick = () => {
+    changeCartItems(product);
+  };
+
+  const handleFavClick = () => {
+    changeFavItems(product);
+  };
+
+
+  return (
+    <motion.div
+    variants={fadeIn("right", "spring", 0.5 * id, 0.75)}
+    className='Goods__card'
+    >
+      <div className='Goods__img-container'>
+        <button
+          type="button"
+          className={cn(
+            'Goods__fav-icon',
+            { 'Goods__fav-icon--in-favs': isInFavs },
+          )}
+          onClick={handleFavClick}
+        >
+          {''}
+        </button>
+
+        <img src={`./assets/goods/glass${id}.jpg`} alt="glasses img" className='Goods__good-img' />
+      </div>
+
+      <div className="Goods__info">
+        <span>{name}</span>
+        <span className='Goods__color'>{color}</span>
+        <span>{price}&euro;</span>
+        <button
+          type="button"
+          className={cn(
+            'Goods__cart-btn',
+            { 'Goods__cart-btn--in-cart ': isInCart },
+          )}
+          onClick={handleCartClick}
+        >
+          {isInCart ? 'Added to cart' : 'Add to cart'}
+        </button>
+      </div>
+    </motion.div>
+  );
+}
+
+
+const Goods = () => {
 
   return (
     <div className='Goods'>
       <div className="Goods__content">
 
-        <div className='Goods__top'>
+      <motion.div variants={textVariant(1.5)} className='Goods__top'>
           <h2>New in</h2>
           <button>See all</button>
-        </div>
+        </motion.div>
+
 
         <div className="Goods__wrapper">
-          {products.map(item => (
+          {products.map((item) => (
             <GoodCard key={item.id} product={item} />
           ))}
         </div>
@@ -26,3 +91,5 @@ export const Goods = () => {
     </div>
   );
 }
+
+export default SectionWrapper(Goods, "goods");
