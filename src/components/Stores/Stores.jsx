@@ -1,16 +1,26 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
+import { fadeIn } from '../../utils/motion';
+import { SectionWrapper } from '../../hoc';
 
 import './Stores.scss';
 
-export const Stores = () => {
+const Stores = () => {
   return (
     <div className='Stores'>
       <div className="Stores__content">
-        <div className="Stores__img">
+        <motion.div
+          variants={fadeIn("right", "spring", 0.75, 1.25)}
+          className="Stores__img"
+        >
           <img src="./assets/design/store.jpg" alt="store" />
-        </div>
+        </motion.div>
 
-        <div className="Stores__text">
+        <motion.div
+          variants={fadeIn("left", "spring", 0.75, 1.25)}
+          className="Stores__text"
+        >
           <h3>Our stores</h3>
           <p>
             You can find us in more than 85 stores in 10 countries. With their modern, lively and inviting appearance,
@@ -18,9 +28,10 @@ export const Stores = () => {
             advice from our expert staff.
           </p>
           <button>Find stores</button>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 }
 
+export default SectionWrapper(Stores, "stores");

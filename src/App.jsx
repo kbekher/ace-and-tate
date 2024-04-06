@@ -4,14 +4,13 @@ import { BasketContext, MenuContext } from "./LayerContext";
 import { Menu } from "./components/Menu/";
 import { Cart } from "./components/Cart/Cart";
 
-import  Header  from './components/Header/Header';
+import Header from './components/Header/Header';
 import Intro from './components/Intro/Intro';
 import Goods from './components/Goods/Goods';
 import About from './components/About/About';
+import Customers from './components/Customers/Customers';
+import Stores from './components/Stores/Stores';
 
-// import { About } from "./components/About/";
-import { Customers } from "./components/Customers/";
-import { Stores } from "./components/Stores/";
 import { Footer } from "./components/Footer/";
 
 import "./App.scss";

@@ -22,13 +22,13 @@ const About = () => {
             }}>
             {item !== 4 ? (
               <motion.img
-                variants={fadeIn(item === 2 ? "right" : "left", "spring", 0, 1.75)}
+                variants={fadeIn(item === 2 ? "right" : "left", "spring", 0.75, 1.75)}
                 src={`./assets/design/collab${item}.jpg`}
                 alt=""
               />
 
             ) : (
-              <motion.h3 variants={fadeIn("left", "spring", 0, 1.75)}>
+              <motion.h3 variants={fadeIn("left", "spring", 0.75, 1.75)}>
                 Our GANNI collab is back
               </motion.h3>
             )}
