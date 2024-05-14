@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+// import { useContext } from 'react';
 // import { Link } from 'react-router-dom';
 // import { generateSlugForProduct } from '../../helpers/utils';
 // import { Product } from '../../types/Product';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useContext, useState } from 'react';
+// import { useContext, useState } from 'react';
 // import { CartContext } from '../../store/SavedProductsContext';
 // import { CartItem } from './CartItem';
 // import { getPriceAfterDiscount } from '../../helpers/utils';
