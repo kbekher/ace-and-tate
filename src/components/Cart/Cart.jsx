@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { BasketContext } from '../../LayerContext';
 import cn from 'classnames';
-import { CartContext } from '../../SavedProductsContext';
+import { CartContext } from '../../store/SavedProductsContext';
 
 import './Cart.scss';
 

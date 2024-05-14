@@ -5,13 +5,14 @@ import cn from 'classnames';
 import { fadeIn, textVariant } from '../../utils/motion';
 
 import { SectionWrapper } from '../../hoc';
-import { CartContext, FavouritesContext } from '../../SavedProductsContext';
+import { CartContext, FavouritesContext } from '../../store/SavedProductsContext';
 import './Goods.scss';
 
 import { products } from './products';
+import { Link } from 'react-router-dom';
 
 const GoodCard = ({ product }) => {
-  const { id, name, color, price } = product;
+  const { id, name, color, price, url } = product;
 
   const { cartItems, changeCartItems } = useContext(CartContext);
   const isInCart = cartItems.length > 0
@@ -32,8 +33,8 @@ const GoodCard = ({ product }) => {
 
   return (
     <motion.div
-    variants={fadeIn("right", "spring", 0.5 * id, 0.75)}
-    className='Goods__card'
+      variants={fadeIn("right", "spring", 0.5 * id, 0.75)}
+      className='Goods__card'
     >
       <div className='Goods__img-container'>
         <button
@@ -47,11 +48,18 @@ const GoodCard = ({ product }) => {
           {''}
         </button>
 
-        <img src={`./assets/goods/glass${id}.jpg`} alt="glasses img" className='Goods__good-img' />
+        <Link to={{ pathname: `/products/${id}` }}>
+          <img src={url} alt="glasses img" className='Goods__good-img' />
+        </Link>
+
       </div>
 
       <div className="Goods__info">
-        <span>{name}</span>
+
+        <Link to={{ pathname: `/products/${id}` }}>
+          <span>{name}</span>
+        </Link>
+
         <span className='Goods__color'>{color}</span>
         <span>{price}&euro;</span>
         <button
@@ -76,7 +84,7 @@ const Goods = () => {
     <div className='Goods'>
       <div className="Goods__content">
 
-      <motion.div variants={textVariant(1.5)} className='Goods__top'>
+        <motion.div variants={textVariant(1.5)} className='Goods__top'>
           <h2>New in</h2>
           <button>See all</button>
         </motion.div>

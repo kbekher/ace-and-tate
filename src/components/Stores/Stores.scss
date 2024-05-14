@@ -75,7 +75,7 @@
       }
     }
 
-    & button {
+    & a {
       @extend %button-primary;
       padding: 10px 40px;
     }

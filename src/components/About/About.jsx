@@ -7,23 +7,41 @@ import { SectionWrapper } from '../../hoc';
 
 import './About.scss';
 
+const collabItems = [
+  {
+    id: 1,
+    url: 'https://i.postimg.cc/G3krcyGZ/colab-1.jpg'
+  },
+  {
+    id: 2,
+    url: 'https://i.postimg.cc/VvBc4xzY/colab-2.jpg'
+  },
+  {
+    id: 3,
+    url: 'https://i.postimg.cc/SRph6SFT/colab-3.jpg'
+  },
+  {
+    id: 4,
+  },
+];
+
 const About = () => {
   return (
     <div className="About">
       <div className="About__content">
-        {[1, 2, 3, 4].map(item => (
+        {collabItems.map(item => (
           <Tilt
-            key={item}
-            className={"About__container-" + item}
+            key={item.id}
+            className={"About__container-" + item.id}
             options={{
               max: 15,
               scale: 1,
               speed: 450,
             }}>
-            {item !== 4 ? (
+            {item.id !== 4 ? (
               <motion.img
-                variants={fadeIn(item === 2 ? "right" : "left", "spring", 0.75, 1.75)}
-                src={`./assets/design/collab${item}.jpg`}
+                variants={fadeIn(item.id === 2 ? "right" : "left", "spring", 0.75, 1.75)}
+                src={item.url}
                 alt=""
               />
 

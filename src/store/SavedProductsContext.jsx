@@ -1,5 +1,5 @@
 import React from 'react';
-import { getItemSaverFunction, useLocalStorage } from './helpers/utils';
+import { getItemSaverFunction, useLocalStorage } from '../helpers/utils';
 
 export const FavouritesContext = React.createContext({
   favourites: [],

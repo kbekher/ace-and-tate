@@ -7,6 +7,20 @@ import { SectionWrapper } from '../../hoc';
 
 import './Customers.scss';
 
+const customersList = [
+  {
+    id: 1,
+    url: "https://i.postimg.cc/XYPtKj9f/people-1.jpg"
+  },
+  {
+    id: 2,
+    url: "https://i.postimg.cc/vm6k3Jvp/people-2.jpg"
+  },
+  {
+    id: 3,
+    url: "https://i.postimg.cc/0QY3q7Fn/people-3.jpg"
+  },
+];
 
 const Customers = () => {
   return (
@@ -22,12 +36,12 @@ const Customers = () => {
         </motion.div>
 
         <div className="Customers__people">
-          {[1, 2, 3].map(item => (
+          {customersList.map(item => (
             <motion.div
-              variants={fadeIn("up", "spring", 0.5 * item, 0.75)}
+              variants={fadeIn("up", "spring", 0.5 * item.id, 0.75)}
               className="Customers__img-container"
             >
-              <img src={`./assets/design/people${item}.jpg`} alt="customer" />
+              <img src={item.url} alt="customer" />
             </motion.div>
           ))}
         </div>

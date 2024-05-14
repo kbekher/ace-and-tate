@@ -12,9 +12,9 @@
     justify-content: space-between;
     align-items: center;
 
-    &>div:not(:nth-child(3)) {
-      width: 20%;
-    }
+    // &>div:not(:nth-child(3)) {
+    //   width: 20%;
+    // }
 
     @include onMobile {
       margin: 0;
@@ -58,6 +58,42 @@
     }
   }
 
+  &__link {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    color: #000;
+
+    margin-right: 10px;
+    border-bottom: 1px solid transparent;
+    position: relative;
+
+    transition: $transition;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: #333;
+      transition: $transition;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+
+    &:hover {
+      color: #000000;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
   &__actions {
     display: flex;
     justify-content: flex-end;
@@ -85,16 +121,17 @@
       }
     }
 
-    & button {
+    & a {
       position: relative;
       display: block;
       transition: $transition;
       cursor: pointer;
-
+  
       &:hover {
         transform: $icons-hover;
       }
     }
+ 
 
     & img {
       @include square(20px);
@@ -117,6 +154,8 @@
       animation: zoom-in-out 0.5s;
     }
   }
+
+
 }
 
 

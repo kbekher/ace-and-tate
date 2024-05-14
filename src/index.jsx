@@ -1,20 +1,14 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BasketProvider, MenuProvider } from './LayerContext';
-import { SavedItemsProvoder } from './SavedProductsContext';
-import { App } from './App';
+import ReactDOM from 'react-dom';
+import { HashRouter, BrowserRouter as Router } from 'react-router-dom';
 
-const element = document.getElementById('root');
-const root = createRoot(element);
+import { Root } from './Root';
+import { SavedItemsProvoder } from './store/SavedProductsContext';
 
-root.render(
-  <StrictMode>
-    <SavedItemsProvoder>
-      <BasketProvider>
-        <MenuProvider>
-          <App />
-        </MenuProvider>
-      </BasketProvider>
-    </SavedItemsProvoder>
-  </StrictMode>
+ReactDOM.render(
+  <SavedItemsProvoder>
+    <Router>
+      <Root />
+    </Router>
+  </SavedItemsProvoder>,
+  document.getElementById('root'),
 );
