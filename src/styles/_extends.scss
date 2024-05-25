@@ -30,10 +30,11 @@
 %heading-h1 {
   font-size: 96px;
   line-height: 96px;
+  font-weight: 900;
 
-  @include onMobile {
-    font-size: 96px;
-    line-height: 96px;
+  @include onTablet {
+    font-size: 74px;
+    line-height: 74px;
   }
 }
 

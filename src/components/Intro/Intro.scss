@@ -16,49 +16,63 @@
   }
 
   &__textBox {
-    width: 78%;
+    max-width: 800px;
     position: relative;
 
     @include onMobile {
-      width: 100%;
+      margin: 0 auto;
+      max-width: 400px;
+      position: static;
+
+      display: flex;
+      flex-direction: column;
     }
   }
 
   &__title {
-    display: inline;
-    color: #ffffff;
-    font-size: 90px;
+    font-size: 96px;
     line-height: 116px;
     font-weight: 900;
+    display: inline;
+    color: #ffffff;
 
     @include onTablet {
-      font-size: 60px;
-      line-height: 74px;
+      font-size: 74px;
+      line-height: 96px;
+    }
+
+    @include onMobile {
+      font-size: 48px;
+      line-height: 60px;
+      text-align: center;
+      margin-bottom: 8px;
     }
   }
 
-  &__innerImg {
-    padding-top: 6px;
-    position: absolute;
-    margin-left: 10px;
-    max-width: 254px;
-    max-height: auto;
-    width: auto;
-    height: auto;
-    border-radius: $border-radius-elements;
+  &__button {
+    background-color: $color-secondary-blue;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
 
+    padding: 22px 32px;
+    margin-left: 20px;
+    border-radius: $border-radius-elements;
     transition: $transition;
+
+    position: absolute;
+    bottom: 10%;
+
+    @include onMobile {
+      position: static;
+      max-width: 182px;
+      margin: 0 auto;
+    }
 
     &:hover {
       transform: scale(1.05);
     }
 
-    @include onTablet {
-      max-width: 170px;
-    }
-
-    @include onMobile {
-      display: none;
-    }
   }
 }
