@@ -4,10 +4,14 @@
   display: none;
 
   @include onTablet {
-    display: block;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 80vh;
   }
 
   &__nav {
-    margin-top: 60px;
+
+    transform: translateY(-30%);
   }
 }
