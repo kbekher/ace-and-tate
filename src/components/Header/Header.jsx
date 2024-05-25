@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import { textVariant } from '../../utils/motion';
@@ -9,20 +9,13 @@ import { CartContext, FavouritesContext } from '../../store/SavedProductsContext
 
 import { Logo } from '../Logo';
 import { Nav } from '../Nav';
-// import { BasketContext, MenuContext } from '../../LayerContext';
 
 import './Header.scss';
 
 const Header = () => {
+  const location = useLocation();
+
   const actionIcons = ['heart', 'bag'];
-
-  // const { isMenuOpen, setIsMenuOpen } = useContext(MenuContext);
-
-  // const handleMenuClick = () => setIsMenuOpen(!isMenuOpen);
-
-  // const { isCartOpen, setIsCartOpen } = useContext(BasketContext);
-
-  // const handleCartClick = () => setIsCartOpen(!isCartOpen);
 
   const { cartItems } = useContext(CartContext);
   const { favourites } = useContext(FavouritesContext);
@@ -37,26 +30,15 @@ const Header = () => {
 
         <div className="Header__hamburger">
           <Link
-            to={{ pathname: '/menu' }}
-          // className="Header__hamburger"
-          // onClick={handleMenuClick}
+            to={{ pathname: `${location.pathname === '/' ? '/menu': '/'}` }}
           >
             <img
-              src="./assets/icons/menu.svg"
+              src={`./assets/icons/${location.pathname === '/' ? 'menu' : 'cross'}.svg`}
               alt="hamburger menu"
               className="Header__hamburger-icon"
             />
           </Link>
         </div>
-
-        {/* 
-        <div className="Header__hamburger" onClick={handleMenuClick}>
-          <img
-            src="./assets/icons/menu.svg"
-            alt="hamburger menu"
-            className="Header__hamburger-icon"
-          />
-        </div> */}
 
         <div className="Header__logo">
           <Logo />
@@ -83,15 +65,6 @@ const Header = () => {
                     </div>
                   )}
                 </Link>
-                {/* <button type="button" onClick={icon === 'bag' ? handleCartClick : () => { }}>
-                  <img src={`./assets/icons/${icon}.svg`} alt={`${icon} icon`} />
-
-                  {getAmount(icon) !== 0 && (
-                    <div key={getAmount(icon)}>
-                      {getAmount(icon)}
-                    </div>
-                  )}
-                </button> */}
               </li>
             ))}
           </ul>

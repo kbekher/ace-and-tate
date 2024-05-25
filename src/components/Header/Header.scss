@@ -12,10 +12,6 @@
     justify-content: space-between;
     align-items: center;
 
-    // &>div:not(:nth-child(3)) {
-    //   width: 20%;
-    // }
-
     @include onMobile {
       margin: 0;
     }
@@ -42,7 +38,8 @@
     }
 
     & a {
-      width: max-content;
+      display: block;
+      @include square(24px);
     }
 
     & img {
@@ -135,7 +132,7 @@
 
 
     & img {
-      @include square(20px);
+      @include square(24px);
     }
 
     & div {
