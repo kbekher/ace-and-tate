@@ -1,7 +1,7 @@
 @import '../../styles/utils';
 
 .Header {
-  height: 60px;
+  padding: 22px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,12 +38,15 @@
 
     @include onTablet {
       display: block;
+      width: 54px;
+    }
+
+    & a {
+      width: max-content;
     }
 
     & img {
-      width: 24px;
-      height: 16px;
-
+      @include square(24px);
       transition: $transition;
 
       &:hover {
@@ -59,10 +62,8 @@
   }
 
   &__link {
-    font-size: 12px;
-    line-height: 14px;
-    font-weight: 400;
-    color: #000;
+    @extend %body-text-m;
+    border-bottom: 1px solid transparent;
 
     margin-right: 10px;
     border-bottom: 1px solid transparent;
@@ -73,7 +74,7 @@
     &::before {
       content: "";
       position: absolute;
-      bottom: -2px;
+      bottom: -10px;
       left: 0;
       width: 0;
       height: 1px;
@@ -116,7 +117,7 @@
     &:not(:last-child) {
       padding-right: 4px;
 
-      @include onMobile {
+      @include onTablet{
         padding-right: 10px;
       }
     }
@@ -126,12 +127,12 @@
       display: block;
       transition: $transition;
       cursor: pointer;
-  
+
       &:hover {
         transform: $icons-hover;
       }
     }
- 
+
 
     & img {
       @include square(20px);

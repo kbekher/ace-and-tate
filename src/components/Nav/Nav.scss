@@ -5,8 +5,7 @@
     display: flex;
     justify-content: space-between;
 
-    font-size: 12px;
-    line-height: 14px;
+    @extend %body-text-m;
 
     @include onTablet {
       flex-direction: column;

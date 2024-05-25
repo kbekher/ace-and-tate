@@ -35,17 +35,20 @@ const Header = () => {
     <motion.header variants={textVariant(1.5)} className="Header">
       <div className="Header__content">
 
-        <Link
-          to={{ pathname: '/menu' }}
-          className="Header__hamburger"
-        // onClick={handleMenuClick}
-        >
-          <img
-            src="./assets/icons/menu.svg"
-            alt="hamburger menu"
-            className="Header__hamburger-icon"
-          />
-        </Link>
+        <div className="Header__hamburger">
+          <Link
+            to={{ pathname: '/menu' }}
+          // className="Header__hamburger"
+          // onClick={handleMenuClick}
+          >
+            <img
+              src="./assets/icons/menu.svg"
+              alt="hamburger menu"
+              className="Header__hamburger-icon"
+            />
+          </Link>
+        </div>
+
         {/* 
         <div className="Header__hamburger" onClick={handleMenuClick}>
           <img

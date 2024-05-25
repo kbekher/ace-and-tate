@@ -1,3 +1,5 @@
+@import './_mixins.scss';
+
 %button-primary {
   padding: 10px 20px;
   border: 1px solid black;
@@ -21,4 +23,28 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+// -------------------------
+
+%heading-h1 {
+  font-size: 96px;
+  line-height: 96px;
+
+  @include onMobile {
+    font-size: 96px;
+    line-height: 96px;
+  }
+}
+
+%heading-h2 {
+  font-size: 74px;
+  line-height: 74px;
+}
+
+%body-text-m {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  color: #000;
 }
