@@ -86,7 +86,7 @@ const Goods = () => {
 
         <motion.div variants={textVariant(1.5)} className='Goods__top'>
           <h2>New in</h2>
-          <button>See all</button>
+          <button disabled>See all</button>
         </motion.div>
 
 

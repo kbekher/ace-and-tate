@@ -47,7 +47,7 @@ const About = () => {
 
             ) : (
               <motion.h3 variants={fadeIn("left", "spring", 0.75, 1.75)}>
-                Our GANNI collab is back
+                Our GANNI  <br /> collab is back
               </motion.h3>
             )}
           </Tilt>

@@ -1,13 +1,12 @@
 @import './_mixins.scss';
 
 %button-primary {
-  padding: 10px 20px;
   border: 1px solid black;
   border-radius: 23px;
   
   font-weight: 500;
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 20px;
+  line-height: 24px;
   text-align: center;
 
   transition: $transition;
@@ -15,7 +14,13 @@
   &:hover {
     cursor: pointer;
     background-color: #131313;
-    color: white;
+    color: #ffffff;
+  }
+
+  &:disabled {
+    background-color: #f1f1f1;
+    border: 1px solid #f1f1f1;
+    color: #565555;
   }
 }
 

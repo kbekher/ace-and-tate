@@ -12,14 +12,13 @@
 
 @mixin grid {
   display: grid;
-  column-gap: 20px;
-  row-gap: 40px;
+  column-gap: 24px;
+  row-gap: 24px;
   grid-template-columns: repeat(12, 1fr);
 
 
   @include onTablet {
     grid-template-columns: repeat(6, 1fr);
-    column-gap: 14px;
     row-gap: 24px;
   }
 

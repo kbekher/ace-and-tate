@@ -25,7 +25,7 @@ export const Cart = () => {
           <div className="Cart__top">
 
             <img
-              src="./assets/icons/bag-cart.svg"
+              src="./assets/icons/bag.svg"
               alt="bag"
               className="Cart__bag-icon"
             />
