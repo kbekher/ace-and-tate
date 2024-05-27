@@ -22,38 +22,43 @@
 
   &__text {
     width: 50%;
-    padding-bottom: 50px;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
     @include onMobile {
+      max-width: 302px;
+      margin: 0 auto;
       width: 100%;
-      text-align: center;
+      align-items: center;
+    }
+
+    & h3,
+    & p {
+      margin-bottom: 24px;
     }
 
     & h3 {
-      font-size: 74px;
-
-      @include onTablet {
-        font-size: 54px;
-      }
+      @extend %heading-h2;
 
       @include onMobile {
-        font-size: 48px;
         margin-bottom: 20px;
+        text-align: center;
       }
     }
 
     & p {
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 24px;
+     @extend %body-text-l;
+    }
 
-      @include onTablet {
-        font-size: 18px;
-        line-height: 20px;
+    & button {
+      @extend %button-primary;
+      padding: 6px 45px;
+      width: max-content;
+
+      @include onMobile {
+        margin: 0 auto;
+        margin-bottom: 64px;
       }
     }
   }
@@ -78,5 +83,4 @@
       height: 100%;
     }
   }
-
 }

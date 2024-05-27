@@ -1,10 +1,10 @@
 @import './_mixins.scss';
 
 %button-primary {
-  border: 1px solid black;
-  border-radius: 23px;
+  border: 1px solid $color-black;
+  border-radius: $border-radius-elements;
   
-  font-weight: 500;
+  font-weight: 600;
   font-size: 20px;
   line-height: 24px;
   text-align: center;
@@ -14,19 +14,15 @@
   &:hover {
     cursor: pointer;
     background-color: #131313;
-    color: #ffffff;
+    color: $color-white;
   }
 
   &:disabled {
-    background-color: #f1f1f1;
-    border: 1px solid #f1f1f1;
+    background-color: $color-gray-light;
+    border: 1px solid $color-gray-light;
     color: #565555;
   }
 
-  @include onMobile {
-    font-size: 16px;
-    line-height: 16px;
-  }
 }
 
 %background-img {
@@ -39,23 +35,48 @@
 
 %heading-h1 {
   font-size: 96px;
-  line-height: 96px;
+  line-height: 116px;
   font-weight: 900;
 
   @include onTablet {
     font-size: 74px;
-    line-height: 74px;
+    line-height: 96px;
+  }
+
+  @include onMobile {
+    font-size: 48px;
+    line-height: 60px;
   }
 }
 
 %heading-h2 {
   font-size: 74px;
   line-height: 74px;
+
+  @include onTablet {
+    font-size: 54px;
+    line-height: 54px;
+  }
+
+  @include onMobile {
+    font-size: 48px;
+    line-height: 48px;
+  }
 }
 
 %body-text-m {
   font-size: 16px;
   line-height: 16px;
-  font-weight: 500;
-  color: #000;
+}
+
+%body-text-l {
+  font-size: 20px;
+  line-height:28px;
+  font-weight: 400;
+}
+
+%body-text-l-extra {
+  font-size: 22px;
+  line-height:24px;
+  font-weight: 800;
 }

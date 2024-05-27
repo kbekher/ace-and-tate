@@ -41,7 +41,7 @@
       left: 0;
       width: 0;
       height: 1px;
-      background-color: #333;
+      background-color: $color-gray-dark;
       transition: $transition;
     }
 
@@ -50,7 +50,7 @@
     }
 
     &:hover {
-      color: #000000;
+      color: $color-black;
     }
   }
 }

@@ -1,8 +1,8 @@
 @import '../../styles/utils';
 
 .Stores {
-  margin-top: 30px;
-  
+  margin-top: 64px;
+
   &__content {
     @include grid;
 
@@ -19,9 +19,6 @@
       grid-column: 1 / 4;
     }
 
-    @include onMobile {
-    }
-
     & img {
       border-radius: $border-radius-elements;
       max-height: 510px;
@@ -36,7 +33,7 @@
 
   &__text {
     padding: 20px;
-    grid-column: 8 / -1;
+    grid-column: 7 / -1;
 
     @include onTablet {
       grid-column: 4 / -1;
@@ -47,37 +44,25 @@
     }
 
     & h3 {
-      font-size: 74px;
-
-      @include onTablet {
-        font-size: 54px;
-      }
-
-      @include onMobile {
-        font-size: 48px;
-      }
+      @extend %heading-h2;
+      margin-bottom: 24px;
     }
 
     & p {
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 24px;
-
-      margin: 40px 0;
-
-      @include onTablet {
-        font-size: 18px;
-        line-height: 20px;
-      }
-
-      @include onMobile {
-        margin: 20px 0;
-      }
+      @extend %body-text-l;
+      margin-bottom: 16px;
     }
 
     & a {
       @extend %button-primary;
       padding: 10px 40px;
+      width: max-content;
+      display: block;
+      box-sizing: border-box;
+
+      @include onMobile {
+        margin: 0 auto;
+      }
     }
   }
 }

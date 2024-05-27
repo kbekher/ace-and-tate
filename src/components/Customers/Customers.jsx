@@ -32,7 +32,9 @@ const Customers = () => {
         >
           <h3>You make us look good</h3>
 
-          <p>Jay, Kai, Lee, Liam, Lily, Madeleine, Max, Monty, Morris, Neil, Nelson, Nina, Pierce, Ray, Roth, Saul, Tyler, Wilson﻿</p>
+          <p>Jay, Kai, Lee, Liam, Lily, Madeleine, Max, Monty, Morris, Neil, Nelson, Nina, Pierce, Ray, Roth, Saul, Tyler, Wilson</p>
+
+          <button type="button">Reviews</button>
         </motion.div>
 
         <div className="Customers__people">

@@ -5,15 +5,10 @@
 
   &__content {
     padding: 0 80px;
-    color: #000000;
+    color: $color-black;
 
     @include onTablet {
       padding: 0 20px;
-    }
-
-    @include onMobile {
-      // position: relative;
-      // padding-bottom: 106px;
     }
   }
 
@@ -46,11 +41,10 @@
     margin-bottom: 24px;
 
     & h2 {
-      font-size: 74px;
+      @extend %heading-h2;
 
       @include onMobile {
         margin: 0 auto;
-        font-size: 44px;
       }
     }
   }
@@ -89,8 +83,8 @@
     margin-bottom: 10px;
 
     height: 300px;
-    border-radius: 70px;
-    background-color: #f1f1f1;
+    border-radius: $border-radius-elements;
+    background-color: $color-gray-light;
 
     overflow: hidden;
 
@@ -105,13 +99,13 @@
     top: 8%;
     right: 10%;
 
-    background-color: white;
+    background-color: $color-white;
     padding: 20px;
     border-radius: 50%;
 
+    @extend %background-img;
     background-image: url('../../../public/assets/icons/heart.svg');
-    background-repeat: no-repeat;
-    background-position: center;
+    background-size: auto;
 
     transition: $transition;
 
@@ -121,7 +115,6 @@
     }
 
     @include onTablet {
-
       &:hover,
       &:active {
         background-image: url('../../../public/assets/icons/heart.svg');
@@ -132,7 +125,6 @@
       background-image: url('../../../public/assets/icons/heart-black.svg');
 
       @include onTablet {
-
         &:hover,
         &:active {
           background-image: url('../../../public/assets/icons/heart-black.svg');
@@ -154,16 +146,14 @@
     align-items: center;
     gap: 4px;
 
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 16px;
+    @extend %body-text-m;
     text-align: center;
   }
 
   &__color {
     font-size: 14px;
 
-    color: #565555;
+    color: $color-gray-dark;
     margin-bottom: 16px;
 
     @include onMobile {
@@ -172,27 +162,34 @@
   }
 
   &__cart-btn {
-    margin-top: 8px;
+    @extend %button-primary;
+    font-weight: 500;
+    padding: 10px 14px;
     width: 150px;
+    margin-top: 8px;
 
     @include onMobile {
       width: 100%;
       margin-top: 16px;
     }
 
-    padding: 10px 14px;
-    @extend %button-primary;
-
+    &,
+    &--in-cart {
+      @include onMobile {
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
 
     &--in-cart {
       color: $color-secondary;
 
-      background-color: #ffffff;
-      border-color: #e1e1e1;
+      background-color: $color-white;
+      border-color: $color-gray-beige;
 
       &:hover {
         color: $color-secondary;
-        background-color: #ffffff;
+        background-color: $color-white;
       }
     }
   }

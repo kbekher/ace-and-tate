@@ -104,10 +104,9 @@
   }
 
   & h3 {
+    background-color: $color-gray-light;
+    color: $color-gray-dark;
     border-radius: $border-radius-elements;
-    background-color: $color-background-item;
-
-    color: #565555;
     font-family: 'Inter';
     font-weight: 900;
     font-size: 74px;
@@ -127,12 +126,10 @@
 
     @include onMobile {
       padding: 18px;
+      border-radius: 43px;
 
-      // font-size: 40px;
       font-size: 34px;
       line-height: 48px;
-
-      border-radius: 43px;
     }
 
     &::after {
@@ -143,8 +140,8 @@
       background-color: $color-secondary-blue;
       border-radius: 44px;
 
-      background-image: url('../../../public/assets/icons/arrow-right-white.svg');
       @extend %background-img;
+      background-image: url('../../../public/assets/icons/arrow-right-white.svg');
       background-size: 14px 24px;
 
       @include onTablet {

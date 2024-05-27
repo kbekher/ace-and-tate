@@ -1,27 +1,20 @@
 @import '../../styles/utils';
 
 .Intro {
-  // height: -moz-available;  // Mozilla-based browsers
-  // height: -webkit-fill-available; //  WebKit-based browsers
-  // height: stretch;
-  // height: 86dvh;
-  // padding-bottom: env(safe-area-inset-bottom); /* Accounts for the home bar */
   height: calc(100svh - 80px);
-  
+
   &__content {
     width: 100%;
     height: 100%;
-    // height: 90vh;
-    
     border-radius: $border-radius-elements;
-    background-image: url('https://i.postimg.cc/yNYtzJsC/header-bg.jpg');
-    background-size: cover;
-    background-position: center;
-
     display: flex;
     flex-direction: column-reverse;
     box-sizing: border-box;
     padding: 30px;
+
+    @extend %background-img;
+    background-image: url('https://i.postimg.cc/yNYtzJsC/header-bg.jpg');
+    background-size: cover;
   }
 
   &__textBox {
@@ -39,20 +32,11 @@
   }
 
   &__title {
-    font-size: 96px;
-    line-height: 116px;
-    font-weight: 900;
+    @extend %heading-h1;
     display: inline;
-    color: #ffffff;
-
-    @include onTablet {
-      font-size: 74px;
-      line-height: 96px;
-    }
+    color: $color-white;
 
     @include onMobile {
-      font-size: 48px;
-      line-height: 60px;
       text-align: center;
       margin-bottom: 8px;
     }
@@ -60,7 +44,7 @@
 
   &__button {
     background-color: $color-secondary-blue;
-    color: #ffffff;
+    color: $color-white;
     font-weight: 600;
     font-size: 20px;
     line-height: 20px;
@@ -82,6 +66,5 @@
     &:hover {
       transform: scale(1.05);
     }
-
   }
 }

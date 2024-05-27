@@ -1,7 +1,7 @@
 @import '../../styles/utils';
 
 .Footer {
-  margin-top: 50px;
+  margin-top: 64px;
 
   &__info-wrapper {
     display: flex;
@@ -17,34 +17,29 @@
   }
 
   &__info-box {
-    font-size: 18px;
-    font-weight: 400;
+    @extend %body-text-l;
 
     h4 {
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    a {
-      text-decoration: underline;
+      @extend %body-text-l-extra;
     }
 
     input {
-      font-size: 16px;
-      line-height: 16px;
-      margin: 10px 0 20px;
+      @extend %body-text-m;
+      font-weight: 300;
+
       display: block;
       box-sizing: border-box;
       width: 100%;
-      background-color: #ffffff;
+      margin: 10px 0 20px;
       padding: 10px 40px 10px 20px;
-      border: 1px solid #000000;
+      background-color: $color-white;
+      border: 1px solid $color-black;
       border-radius: $border-radius-elements;
 
       transition: $transition;
 
       &:hover {
-        border-color: #7e7e7e;
+        border-color: $color-gray-dark;
       }
     }
   }
