@@ -1,8 +1,16 @@
 @import '../../styles/utils';
 
 .Intro {
+  // height: -moz-available;  // Mozilla-based browsers
+  // height: -webkit-fill-available; //  WebKit-based browsers
+  // height: stretch;
+  // height: 100vh;  // fallback and unsupported browsers
+  
   &__content {
     width: 100%;
+    height: -moz-available;  // Mozilla-based browsers
+    height: -webkit-fill-available; //  WebKit-based browsers
+    height: stretch;
     height: 90vh;
     border-radius: $border-radius-elements;
     background-image: url('https://i.postimg.cc/yNYtzJsC/header-bg.jpg');
