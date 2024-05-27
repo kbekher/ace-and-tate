@@ -12,8 +12,30 @@
     }
 
     @include onMobile {
-      position: relative;
-      padding-bottom: 106px;
+      // position: relative;
+      // padding-bottom: 106px;
+    }
+  }
+
+  &__more-btn {
+    @extend %button-primary;
+
+    padding: 10px 30px;
+
+    &--desktop {
+      @include onMobile {
+        display: none
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include onMobile {
+        display: block;
+        margin: 0 auto;
+        margin-top: 56px;
+      }
     }
   }
 
@@ -27,21 +49,8 @@
       font-size: 74px;
 
       @include onMobile {
-       margin: 0 auto;
+        margin: 0 auto;
         font-size: 44px;
-      }
-    }
-
-    & button {
-      @extend %button-primary;
-
-      padding: 10px 30px;
-
-      @include onMobile {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
       }
     }
   }

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 import cn from 'classnames';
 
@@ -79,40 +79,13 @@ const GoodCard = ({ product }) => {
 
 
 const Goods = () => {
-
-  // State to manage button visibility
-  const [isButtonVisible, setIsButtonVisible] = useState(false);
-
-  // Function to check if the device is mobile
-  const isMobileDevice = () => {
-    return window.matchMedia("(max-width: 767px)").matches;
-  };
-
-
-  // Effect to set a timeout for button appearance only on mobile devices
-  useEffect(() => {
-    if (isMobileDevice()) {
-      const timer = setTimeout(() => {
-        setIsButtonVisible(true);
-      }, 4000); // Button will appear after 4 seconds
-
-      // Cleanup the timer if the component is unmounted
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
-
   return (
     <div className='Goods'>
       <div className="Goods__content">
 
         <motion.div variants={textVariant(1.5)} className='Goods__top'>
           <h2>New in</h2>
-          {isMobileDevice() ? (
-            isButtonVisible && <button disabled>See all</button>
-          ) : (
-            <button disabled>See all</button>
-          )}
+          <button className="Goods__more-btn Goods__more-btn--desktop" disabled>See all</button>
         </motion.div>
 
 
@@ -121,6 +94,8 @@ const Goods = () => {
             <GoodCard key={item.id} product={item} />
           ))}
         </div>
+
+        <button className="Goods__more-btn Goods__more-btn--mobile" disabled>See all</button>
       </div>
     </div>
   );
