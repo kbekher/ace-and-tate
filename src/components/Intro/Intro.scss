@@ -1,11 +1,11 @@
 @import '../../styles/utils';
 
 .Intro {
-  height: -moz-available;  // Mozilla-based browsers
-  height: -webkit-fill-available; //  WebKit-based browsers
-  height: stretch;
-  height: calc(100vh - 72px);  // fallback and unsupported browsers
-  padding-bottom: env(safe-area-inset-bottom); /* Accounts for the home bar */
+  // height: -moz-available;  // Mozilla-based browsers
+  // height: -webkit-fill-available; //  WebKit-based browsers
+  // height: stretch;
+  height: 86dvh;
+  // padding-bottom: env(safe-area-inset-bottom); /* Accounts for the home bar */
   
   &__content {
     width: 100%;
