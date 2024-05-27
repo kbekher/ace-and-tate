@@ -13,14 +13,14 @@
 
   &:hover {
     cursor: pointer;
-    background-color: #131313;
+    background-color: $color-black;
     color: $color-white;
   }
 
   &:disabled {
     background-color: $color-gray-light;
     border: 1px solid $color-gray-light;
-    color: #565555;
+    color: $color-gray-dark;
   }
 
 }
