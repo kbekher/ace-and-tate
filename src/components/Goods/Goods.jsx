@@ -11,7 +11,7 @@ import './Goods.scss';
 import { products } from './products';
 import { Link } from 'react-router-dom';
 
-const GoodCard = ({ product }) => {
+export const GoodCard = ({ product }) => {
   const { id, name, color, price, url } = product;
 
   const { cartItems, changeCartItems } = useContext(CartContext);

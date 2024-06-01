@@ -4,6 +4,7 @@
   display: block;
   transition: $transition;
   cursor: pointer;
+  display: block;
 
   &:hover {
     transform: $icons-hover;

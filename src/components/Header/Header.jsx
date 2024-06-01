@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
@@ -10,18 +10,26 @@ import { CartContext, FavouritesContext } from '../../store/SavedProductsContext
 import { Logo } from '../Logo';
 import { Nav } from '../Nav';
 
+
 import './Header.scss';
 
 const Header = () => {
   const location = useLocation();
+  const [prevPath, setPrevPath] = useState('');
 
-  const actionIcons = ['heart', 'bag'];
+  useEffect(() => {
+    if (location.pathname !== '/cart') {
+      setPrevPath(location.pathname);
+    }
+  }, [location]);
+
+  const actionIcons = ['heart', 'cart'];
 
   const { cartItems } = useContext(CartContext);
   const { favourites } = useContext(FavouritesContext);
 
   const getAmount = (iconType) => {
-    return iconType === 'bag' ? cartItems.length : favourites.length;
+    return iconType === 'cart' ? cartItems.length : favourites.length;
   };
 
   return (
@@ -30,10 +38,10 @@ const Header = () => {
 
         <div className="Header__hamburger">
           <Link
-            to={{ pathname: `${location.pathname === '/' ? '/menu': '/'}` }}
+            to={{ pathname: `${location.pathname !== '/menu' ? '/menu': '/'}` }}
           >
             <img
-              src={`./assets/icons/${location.pathname === '/' ? 'menu' : 'cross'}.svg`}
+              src={`./assets/icons/${location.pathname !== '/menu' ? 'menu' : 'cross'}.svg`}
               alt="hamburger menu"
               className="Header__hamburger-icon"
             />
@@ -53,13 +61,19 @@ const Header = () => {
             <Link to={{ pathname: '/eyetest' }} className="Header__link">
               Free eye test
             </Link>
+    
 
             {actionIcons.map(icon => (
-              <li className='Header__actionItem' key={icon}>
-                <Link to={{ pathname: icon === 'bag' ? `/${icon}` : '/' }}>
-                  <img src={`./assets/icons/${icon}.svg`} alt={`${icon} icon`} />
+              <li className={`Header__actionItem${(location.pathname === '/cart' && icon === 'heart') ? '--none': ''}`} key={icon}>
+                <Link 
+                  to={{ pathname: `${location.pathname !== '/cart' ? `/${icon}` : prevPath}` }}
+                >
+                  <img
+                    src={`./assets/icons/${location.pathname !== '/cart' ? icon : 'cross'}.svg`}
+                    alt={`${icon} icon`} 
+                  />
 
-                  {getAmount(icon) !== 0 && (
+                  {location.pathname !== '/cart' && getAmount(icon) !== 0 && (
                     <div key={getAmount(icon)} className='Header__actionCount'>
                       {getAmount(icon)}
                     </div>

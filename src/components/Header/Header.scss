@@ -12,19 +12,23 @@
     justify-content: space-between;
     align-items: center;
 
+    position: relative;
+
     @include onMobile {
       margin: 0;
+    }
+
+    &--menu {
+      flex-direction: row-reverse;
     }
   }
 
   &__logo {
     @include onTablet {
-      flex-grow: 1;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
 
-      &>button {
-        display: block;
-        margin: 0 auto;
-      }
     }
   }
 
@@ -53,6 +57,10 @@
   }
 
   &__nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
     @include onTablet {
       display: none;
     }
@@ -92,12 +100,9 @@
   }
 
   &__actions {
+    margin-right: 4px;
     display: flex;
     justify-content: flex-end;
-
-    @include onMobile {
-      margin-right: 4px;
-    }
   }
 
   &__actionList {
@@ -113,7 +118,7 @@
     &:not(:last-child) {
       padding-right: 4px;
 
-      @include onTablet{
+      @include onTablet {
         padding-right: 10px;
       }
     }
@@ -149,6 +154,10 @@
       border-radius: 50%;
 
       animation: zoom-in-out 0.5s;
+    }
+
+    &--none {
+      display: none;
     }
   }
 }
