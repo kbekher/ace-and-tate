@@ -170,8 +170,10 @@ export const CartPage = () => {
 
               <div className="Cart__summary-subtotal">Subtotal: {totalAmount}&euro;</div>
 
-              <button className="Cart__summary-checkout-btn">Proceed to checkout</button>
+              <button type="button" className="Cart__summary-checkout-btn">Proceed to checkout</button>
             </div>
+
+            <button type="button" className="Cart__summary-checkout-btn blue"></button>
           </div>
         </div>
       </div>
