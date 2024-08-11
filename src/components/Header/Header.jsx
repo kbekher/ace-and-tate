@@ -64,7 +64,7 @@ const Header = () => {
     
 
             {actionIcons.map(icon => (
-              <li className={`Header__actionItem${(location.pathname === '/cart' && icon === 'heart') ? '--none': ''}`} key={icon}>
+              <li className={`Header__actionItem${(location.pathname === '/cart' && icon === 'heart') ? '--none': ''} Header__actionItem--${icon}`} key={icon}>
                 <Link 
                   to={{ pathname: `${location.pathname !== '/cart' ? `/${icon}` : prevPath}` }}
                 >

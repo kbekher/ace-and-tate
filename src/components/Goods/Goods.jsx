@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import cn from 'classnames';
 
 import { fadeIn, textVariant } from '../../utils/motion';
-
 import { SectionWrapper } from '../../hoc';
 import { CartContext, FavouritesContext } from '../../store/SavedProductsContext';
+import { AWS_URL }from '../../constants/constants';
+import { products } from './products';
+
 import './Goods.scss';
 
-import { products } from './products';
-import { Link } from 'react-router-dom';
+const IMG_URL = `${AWS_URL}products/`;
 
 export const GoodCard = ({ product }) => {
   const { id, name, color, price, url } = product;
@@ -49,7 +51,7 @@ export const GoodCard = ({ product }) => {
         </button>
 
         <Link to={{ pathname: `/products/${id}` }}>
-          <img src={url} alt="glasses img" className='Goods__good-img' />
+          <img src={`${IMG_URL}${url}.jpg`} alt="glasses img" className='Goods__good-img' />
         </Link>
 
       </div>

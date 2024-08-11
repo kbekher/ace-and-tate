@@ -6,7 +6,11 @@ import { CartContext, FavouritesContext } from '../../store/SavedProductsContext
 
 import './CartPage.scss';
 
+const IMG_URL = 'https://ace-and-tate.s3.eu-central-1.amazonaws.com/products/';
+
 const CartProduct = ({ product }) => {
+  const { id, name, color, price, url } = product;
+
   const { favourites } = useContext(FavouritesContext);
 
   const isInFavs = (id) => {
@@ -16,28 +20,28 @@ const CartProduct = ({ product }) => {
   const actionIcons = ['pen', 'copy', 'cross'];
 
   return (
-    <div className='Cart__product' key={product.id}>
+    <div className='Cart__product' key={id}>
 
       <div className="Cart__product-img-container">
         <button
           type="button"
           className={cn(
             'fav-icon',
-            { 'fav-icon--in-favs': isInFavs(product.id) },
+            { 'fav-icon--in-favs': isInFavs(id) },
           )}
         >
           {''}
         </button>
 
-        <img src={product.url} alt="glasses img" className='Cart__product-img' />
+        <img src={`${IMG_URL}${url}.jpg`} alt="glasses img" className='Cart__product-img' />
       </div>
 
       <div className="Cart__product-section">
         <div className="Cart__product-info">
           <div className="Cart__product-info--inner">
-            <span>{product.name}</span>
-            <span className='Cart__product-color'>{product.color}</span>
-            <span>{product.price}&euro;</span>
+            <span>{name}</span>
+            <span className='Cart__product-color'>{color}</span>
+            <span>{price}&euro;</span>
           </div>
         </div>
 
@@ -174,6 +178,10 @@ export const CartPage = () => {
             </div>
 
             <button type="button" className="Cart__summary-checkout-btn blue"></button>
+          </div>
+
+          <div className="Cart__recos">
+           { /*TODO: Create recos*/ }
           </div>
         </div>
       </div>

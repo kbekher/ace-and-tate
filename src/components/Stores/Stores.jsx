@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 import { fadeIn } from '../../utils/motion';
 import { SectionWrapper } from '../../hoc';
+import { AWS_URL }from '../../constants/constants';
 
 import './Stores.scss';
 
@@ -15,7 +16,7 @@ const Stores = () => {
           variants={fadeIn("right", "spring", 0.75, 1.25)}
           className="Stores__img"
         >
-          <img src="https://i.postimg.cc/66hSjLd5/store.jpg" alt="store" />
+          <img src={`${AWS_URL }design/store_bg.jpg`} alt="store" />
         </motion.div>
 
         <motion.div

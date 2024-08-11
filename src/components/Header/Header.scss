@@ -159,6 +159,10 @@
     &--none {
       display: none;
     }
+
+    &--heart {
+      pointer-events: none;
+    }
   }
 }
 
