@@ -1,0 +1,22 @@
+@import '../../styles/utils';
+
+.Recos {
+  &__title{
+    max-width: 50%;
+    @extend %heading-h2;
+    font-weight: 900;
+    margin-bottom: 24px;
+
+    @include onMobile {
+      margin-top: 20px;
+    }
+  }
+
+  &__products {
+    @include grid;
+
+    @include onMobile {
+      row-gap: 50px;
+    }
+  }
+}

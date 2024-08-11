@@ -3,7 +3,6 @@ import React from 'react';
 import './Footer.scss';
 
 export const Footer = () => {
-  // Function to set the viewport meta tag content
   const setViewportContent = (content) => {
     let viewportMeta = document.querySelector('meta[name="viewport"]');
     if (!viewportMeta) {
@@ -14,7 +13,6 @@ export const Footer = () => {
     viewportMeta.setAttribute('content', content);
   };
 
-  // useEffect(() => {
     const handleFocus = () => {
       setViewportContent('width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes');
     };
@@ -26,7 +24,7 @@ export const Footer = () => {
     const handleBlur = () => {
       setViewportContent('width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
     };
-  // }, []);
+
   return (
     <div className='Footer'>
       <div className="Footer__content">

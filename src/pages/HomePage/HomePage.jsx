@@ -4,7 +4,6 @@ import About from '../../components/About/About';
 import Customers from '../../components/Customers/Customers';
 import Stores from '../../components/Stores/Stores';
 
-// import './HomePage.scss';
 
 export const HomePage = () => (
   <div className="HomePage">

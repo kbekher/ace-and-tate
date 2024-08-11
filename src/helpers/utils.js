@@ -55,3 +55,21 @@ export const getItemSaverFunction = (key, savedProducts, saveToState ) => {
     localStorage.setItem(key, JSON.stringify(newProducts));
   };
 };
+
+const generateRandomNumber = (max) => {
+  return Math.floor(Math.random() * (max + 1));
+};
+
+export const getRandomProducts = (products) => {
+  const availableIndexes = products.map((...args) => args[1]);
+  const indexes = [];
+
+  for (let i = 0; i < 4; i += 1) {
+    const randomIndex = generateRandomNumber(availableIndexes.length - 1);
+    const newIndex = availableIndexes.splice(randomIndex, 1)[0];
+
+    indexes.push(newIndex);
+  }
+
+  return indexes.map((randomIndex) => products[randomIndex]);
+};

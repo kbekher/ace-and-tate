@@ -5,6 +5,7 @@ import cn from 'classnames';
 import { CartContext, FavouritesContext } from '../../store/SavedProductsContext';
 
 import './CartPage.scss';
+import Recos from '../../components/Recos/Recos';
 
 const IMG_URL = 'https://ace-and-tate.s3.eu-central-1.amazonaws.com/products/';
 
@@ -79,8 +80,7 @@ const CartProduct = ({ product }) => {
         </ul>
       </div>
     </div>
-  )
-
+  );
 }
 
 export const CartPage = () => {
@@ -99,7 +99,6 @@ export const CartPage = () => {
 
     window.addEventListener('resize', handleResize);
 
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -181,7 +180,7 @@ export const CartPage = () => {
           </div>
 
           <div className="Cart__recos">
-           { /*TODO: Create recos*/ }
+            <Recos title="Recommended products" />
           </div>
         </div>
       </div>
